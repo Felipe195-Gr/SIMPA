@@ -1,5 +1,5 @@
-from cadastro_produtos import cadastrar_produto
-from cadastro_clientes import cadastrar_cliente
+from cadastro_produtos import cadastro_produtos
+from cadastro_clientes import cadastro_cliente
 
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
@@ -13,7 +13,7 @@ while True:
     escolha = input("Digite o número da opção desejada: ")
 
     if escolha == 1:
-        cadastrar_produto()
+        cadastro_produtos()
 
     elif escolha == 2:
-        cadastrar_cliente
+        cadastro_cliente
