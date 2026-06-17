@@ -1,4 +1,4 @@
-def cadastrar_produto(nome_produto, descricao_produto, preco_produto):
+def cadastro_produto(nome_produto, descricao_produto, preco_produto):
     print("Cadastro de Produtos")
     nome_produto = input("Digite o nome do produto: ")
     descricao_produto = input("Digite a descrição do produto: ")
