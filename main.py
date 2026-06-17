@@ -17,3 +17,7 @@ while True:
 
     elif escolha == 2:
         cadastro_cliente
+
+    elif escolha == 5:
+        print("Obrigado por usar o SIMPA! Até a próxima!")
+        break
