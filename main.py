@@ -12,12 +12,12 @@ while True:
 
     escolha = input("Digite o número da opção desejada: ")
 
-    if escolha == 1:
-        cadastro_produto
+    if escolha == "1":
+        cadastro_produto()
 
-    elif escolha == 2:
-        cadastro_cliente
+    elif escolha == "2":
+       cadastro_cliente()
 
-    elif escolha == 5:
+    elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
         break
