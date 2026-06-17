@@ -9,3 +9,5 @@ while True:
 
     escolha = input("Digite o número da opção desejada: ")
 
+    if escolha == 5:
+        break
