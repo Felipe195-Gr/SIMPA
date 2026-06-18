@@ -4,6 +4,6 @@ def cadastro_produtos():
     descricao_produto = input("Digite a descrição do produto: ")
     preco_produto = float(input("Digite o preço do produto: "))
 
-    with open(f'C:\\Users\\felip\\OneDrive\\Documentos\\SIMPAcadastro_produtos.csv', 'a') as arquivo:
+    with open(f'cadastro_produtos.csv', 'a') as arquivo:
         arquivo.write(f"{nome_produto};{descricao_produto}; R${preco_produto:.2f}\n")
     print("Produto cadastrado com sucesso!")
