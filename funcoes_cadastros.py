@@ -16,7 +16,7 @@ def cadastro_produtos():
 
     vendedor = input("Digite o nome do vendedor: ")
 
-    with open(f'cadastro_produtos.csv', 'a') as arquivo:
+    with open(f'cadastro_produtos.csv', 'a', encoding="utf-8") as arquivo:
         arquivo.write(f"{codigo};{nome};{categoria};{preco};{estoque};{vendedor}\n")    
         print("Produto cadastrado com sucesso!")
 
