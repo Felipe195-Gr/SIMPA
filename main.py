@@ -31,13 +31,10 @@ while True:
                 cadastro_vendedores()   
 
             elif escolha == "4":
+                print("Saindo do menu de cadastros")
                 break
 
     elif escolha == "5":
+        print("Obrigado por usar o SIMPA! Até a próxima!")
         break
 
-            
-
-    # elif escolha == "5":
-    #     print("Obrigado por usar o SIMPA! Até a próxima!")
-    #     break
