@@ -2,12 +2,13 @@ from funcoes import cadastro_produtos
 from funcoes import cadastro_cliente
 from funcoes import cadastro_vendedores
 from funcoes import consulta
-
+from funcao_criar_pedido import criar_pedido
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
     print(" 1 - Aba de cadastros")
     print(" 2 - Consulta de pedidos")
+    print(" 3 - Criar pedidos")
     print(" 5 - Sair")
 
     escolha = input("Digite o número da opção desejada: ")
@@ -38,6 +39,9 @@ while True:
     
     elif escolha == "2":
         consulta()
+
+    elif escolha == "3":
+        criar_pedido()
 
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
