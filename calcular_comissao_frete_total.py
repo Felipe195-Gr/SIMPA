@@ -11,5 +11,7 @@ def calcular_comissao(preco_produto):
 def calcular_total(preco_produto, frete):
     if preco_produto > 250.00:
         frete = 0
-    elif preco_produto <= 250.00 and preco_produto >= 100.00:
-        frete = 10
+    elif preco_produto <= 250.00:
+        frete = 15.00
+        total = preco_produto + frete
+    return total
