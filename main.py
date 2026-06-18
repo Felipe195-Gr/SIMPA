@@ -1,6 +1,6 @@
-from cadastro_produtos import cadastro_produtos
-from cadastro_clientes import cadastro_cliente
-from cadastro_vendedores import cadastro_vendedores
+from funcoes_cadastros import cadastro_produtos
+from funcoes_cadastros import cadastro_cliente
+from funcoes_cadastros import cadastro_vendedores
 from pedidos import pedidos
 
 while True:
@@ -38,7 +38,7 @@ while True:
     
     elif escolha == "2":
         pedidos()
-        
+
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
         break
