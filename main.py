@@ -7,7 +7,7 @@ while True:
     print(" 1 - Cadastrar produto")
     print(" 2 - Cadastrar clientes")
     print(" 3 - Cadastrar vendedores")
-    print(" 4 - Consultar endereço")
+    print(" 4 - Criar pedido")
     print(" 5 - Sair")
 
     escolha = input("Digite o número da opção desejada: ")
