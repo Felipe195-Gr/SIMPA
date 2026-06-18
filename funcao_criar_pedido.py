@@ -1,1 +1,3 @@
-def criar_pedido
+def criar_pedido():
+    print("oi")
+    
