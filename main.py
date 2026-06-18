@@ -1,4 +1,4 @@
-from cadastro_produtos import cadastro_produto
+from cadastro_produtos import cadastro_produtos
 from cadastro_clientes import cadastro_cliente
 
 while True:
@@ -13,7 +13,7 @@ while True:
     escolha = input("Digite o número da opção desejada: ")
 
     if escolha == "1":
-        cadastro_produto()
+        cadastro_produtos()
 
     elif escolha == "2":
        cadastro_cliente()
