@@ -16,21 +16,21 @@ while True:
 
         while True:
             print("Essa é a aba de cadastros")
-            print(" 1 - Cadastro produtos")
+            print(" 1 - Cadastro vendedores")
             print(" 2 - Cadastro clientes")
-            print(" 3 - Cadastro vendedores")
+            print(" 3 - Cadastro produtos")
             print(" 4 - Sair")
 
             escolha_cadastros = input("Digite o número da opção desejada: ")
             
             if escolha_cadastros == "1":
-                cadastro_produtos()
+                cadastro_vendedores()
 
             elif escolha_cadastros == "2":
                 cadastro_cliente()
             
             elif escolha_cadastros == "3":
-                cadastro_vendedores()   
+                cadastro_produtos()   
 
             elif escolha_cadastros == "4":
                 print("Saindo do menu de cadastros")
