@@ -1,8 +1,8 @@
-def cadastro_cliente(nome, email, CEP):
+def cadastro_cliente(nome, email, endereço):
     print("Cadastro de Clientes")
     nome = input("Digite o nome do cliente: ")
     email = input("Digite o email do cliente: ")
-    CEP = input("Digite o CEP do cliente: ")
-    
-    with open("C:\\Users\\felip\\OneDrive\\Documentos\\SIMPA\\clientes.csv", "a") as arquivo:
-        arquivo.write(f"{nome},{email},{CEP}\n")
+    endereço = input("Digite o endereço do cliente")
+
+    with open ('C:\\Users\\felip\\OneDrive\\Documentos\\SIMPA\\clientes.csv', 'a', encoding='utf-8') as arquivo:
+        nome, email, endereço
