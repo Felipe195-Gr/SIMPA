@@ -12,7 +12,7 @@ def pedidos():
                 estoque = dados[4]
                 vendedor = dados[5]
                 if produto == nome_produto:
-                    print(f"produto pesquisado: {produto}, {codigo}, {nome_produto}, {categoria}, {preco}, {estoque}, {vendedor}")
+                    print(f"produto pesquisado: {produto},ID:{codigo}, {nome_produto}, {categoria}, R${preco}, {estoque}, {vendedor}")
         break
 
 pedidos()
