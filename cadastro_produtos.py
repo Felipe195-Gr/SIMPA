@@ -10,3 +10,4 @@ def cadastro_produtos():
     with open(f'cadastro_produtos.csv', 'a') as arquivo:
         arquivo.write(f"{codigo};{nome};{categoria};{preco};{estoque};{vendedor}")
         print("Produto cadastrado com sucesso!")
+
