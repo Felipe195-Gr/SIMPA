@@ -38,3 +38,22 @@ def cadastro_vendedores():
 
     with open('vendedores.csv', 'a', encoding='utf-8') as arquivo:
         arquivo.write(f"{nome};{telefone};{cep}")
+
+def consulta():
+    while True:
+        produto = input("Digite o nome do produto: ")
+        with open('cadastro_produtos.csv', 'r', encoding="utf-8") as arquivo: 
+            for linha in arquivo:
+                linha = linha.strip()
+                dados = linha.split(";")
+                codigo = dados[0]
+                nome_produto = dados[1]
+                categoria = dados[2]
+                preco = dados[3]
+                estoque = dados[4]
+                vendedor = dados[5]
+                if produto == nome_produto:
+                    print(f"produto pesquisado: {produto},ID:{codigo}, {nome_produto}, {categoria}, R${preco}, {estoque}, {vendedor}")
+        break
+
+            
