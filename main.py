@@ -14,9 +14,10 @@ while True:
 
         while True:
             print("Essa é a aba de cadastros")
-            print("Cadastro produtos")
-            print("Cadastro clientes")
-            print("Cadastro vendedores")
+            print(" 1 - Cadastro produtos")
+            print(" 2 - Cadastro clientes")
+            print(" 3 - Cadastro vendedores")
+            print(" 4 - Sair")
 
             escolha == input("Digite o número da opção desejada: ")
             
@@ -28,6 +29,14 @@ while True:
             
             elif escolha == "3":
                 cadastro_vendedores()   
+
+            elif escolha == "4":
+                break
+
+    elif escolha == "5":
+        break
+
+            
 
     # elif escolha == "5":
     #     print("Obrigado por usar o SIMPA! Até a próxima!")
