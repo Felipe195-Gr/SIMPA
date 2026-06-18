@@ -1,0 +1,2 @@
+def pedidos():
+    print("teste")

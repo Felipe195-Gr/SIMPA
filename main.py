@@ -1,6 +1,7 @@
 from cadastro_produtos import cadastro_produtos
 from cadastro_clientes import cadastro_cliente
 from cadastro_vendedores import cadastro_vendedores
+from pedidos import pedidos
 
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
