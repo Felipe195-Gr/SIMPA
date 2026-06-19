@@ -1,7 +1,7 @@
-import cadastro_produtos.csv
+import csv
 def criar_pedido():
     with open("cadastro_produtos.csv", "r", encoding="utf-8") as arquivo:
-        leitor = cadastro_produtos.csv.DictReader(arquivo)
+        leitor = csv.DictReader(arquivo)
 
     for linha in leitor:
         print(linha)
