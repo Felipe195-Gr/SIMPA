@@ -23,21 +23,24 @@ def cadastro_produtos():
 #função que cadastra os clientes
 def cadastro_cliente():
     print("Cadastro de Clientes")
+    cpf = input("Digite o CPF do cliente")
     nome = input("Digite o nome do cliente: ")
     email = input("Digite o email do cliente: ")
     cep = input("Digite o endereço do cliente: ")
 
+
     with open ('clientes.csv', 'a', encoding='utf-8') as arquivo:
-        arquivo.write(f"{nome};{email};{cep}\n")
+        arquivo.write(f"{cpf};{nome};{email};{cep}\n")
 
 #função que cadastra os vendedores
 def cadastro_vendedores():
+    cpf = input("Digite o CPF do vendedor")
     nome = input("Qual é o nome do vendedor: ")
     telefone = input("Qual é o telefone do vendedor(49)xxxxx-xxxx: ")
     cep = input("Qual é o CEP do vendedor (xxxxx-xxx): ")
-
+    
     with open('vendedores.csv', 'a', encoding='utf-8') as arquivo:
-        arquivo.write(f"{nome};{telefone};{cep}")
+        arquivo.write(f"{cpf};{nome};{telefone};{cep}")
 
 def consulta():
     while True:
