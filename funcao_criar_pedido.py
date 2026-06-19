@@ -1,8 +1,10 @@
+import csv
 def criar_pedido():
-    while True:
-        pedido = input("Digite o pedido que deseja criar: ")
-        
+    with open("cadastro_produtos.csv", "r", encoding="utf-8") as arquivo:
+        leitor = csv.DictReader(arquivo)
 
+    for linha in leitor:
+        print(linha)
 """
  pedidos = {
                 "1": {
@@ -12,6 +14,16 @@ def criar_pedido():
                     "produtos": [
                         "1" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro},
                         "2" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro1}
+                        "3" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro2}
+                        "4" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro3}
+                        "5" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro4}
+                        "6" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro5}
+                        "7" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro6}
+                        "8" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro7}
+                        "9" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro8}
+                        "10" : {015;Escultura em Madeira;Artesanato;150.00;3;Thiago Ribeiro9}
+                        "
+
                     ]
                 }
  }
