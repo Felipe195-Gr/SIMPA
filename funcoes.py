@@ -1,5 +1,6 @@
 import requests
 import csv
+
 #função que cadastra os produtos
 
 def cadastro_produtos():
@@ -60,7 +61,11 @@ def consulta():
                 if produto == nome_produto:
                     print(f"produto pesquisado: {produto},ID:{codigo}, {nome_produto}, {categoria}, R${preco}, {estoque}, {vendedor}")
         break
+    
 
+def relatorio_total_vendido(pedidos):
+    from calculos import calcular_total
+    total_vendido = 0
 
 def consultar_Cep():
     with open("clientes.csv", "r", encoding="utf-8") as arquivo:
