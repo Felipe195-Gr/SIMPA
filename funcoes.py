@@ -1,6 +1,6 @@
 import requests
 import csv
-from calculos import calcular_total
+from calculos import *
 
 #função que cadastra os produtos
 
