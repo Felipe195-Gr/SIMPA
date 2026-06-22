@@ -58,6 +58,3 @@ def consulta():
                 if produto == nome_produto:
                     print(f"produto pesquisado: {produto},ID:{codigo}, {nome_produto}, {categoria}, R${preco}, {estoque}, {vendedor}")
         break
-
-
-
