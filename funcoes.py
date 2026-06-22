@@ -1,3 +1,6 @@
+import requests
+import csv
+
 #função que cadastra os produtos
 
 def cadastro_produtos():
@@ -63,8 +66,19 @@ def relatorio_total_vendido(pedidos):
     from calculos import calcular_total
     total_vendido = 0
 
-    for pedido in pedidos:
-        total_vendido += calcular_total(pedido)
-    total = relatorio_total_vendido(pedidos)
-    print(f"Total vendido: R$ {total:.2f}")
-    return total_vendido
+def consultar_Cep():
+    with open("clientes.csv", "r", encoding="utf-8") as arquivo:
+        print("Clientes cadastrados:")
+        clientes = {}
+
+    cep = input("Digite o CEP:")
+    url = f"https://viacep.com.br/ws/{cep}/json/"
+
+    response = requests.get(url)
+    dados = response.json()
+
+    print(f"CEP: {dados['cep']}")
+    print(f"Endereço: {dados['logradouro']}")
+    print(f"Bairro: {dados['bairro']}")
+    print(f"Cidade: {dados['localidade']}")
+    print(f"Estado: {dados['uf']}")
