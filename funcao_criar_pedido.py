@@ -49,8 +49,8 @@ def criar_pedido():
                     print("Código de produto não encontrado. Por favor, tente novamente.")
     return pedido
 
-pedido = criar_pedido()
-print(pedido)
+# pedido = criar_pedido()
+# print(pedido)
 
 
 
