@@ -76,6 +76,15 @@ def consultar_Cep():
         print("Clientes cadastrados:")
         clientes = {}
 
+        for linha in arquivo:
+            cpf, nome_cliente, email, cep = linha.strip().split(";")
+            clientes[cpf] = {
+                "nome": nome_cliente,
+                "email": email,
+                "cep": cep
+            }
+            print(f"CPF: {cpf}, Nome: {nome_cliente}, Email: {email}, CEP: {cep}")
+
     cep = input("Digite o CEP:")
     url = f"https://viacep.com.br/ws/{cep}/json/"
 
