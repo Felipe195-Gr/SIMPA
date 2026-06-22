@@ -1,3 +1,4 @@
+import requests
 #função que cadastra os produtos
 
 def cadastro_produtos():
@@ -60,4 +61,15 @@ def consulta():
         break
 
 
+def consultar_Cep():
+    cep = input("Digite o CEP:")
+    url = f"https://viacep.com.br/ws/{cep}/json/"
 
+    response = requests.get(url)
+    dados = response.json()
+
+    print(f"CEP: {dados['cep']}")
+    print(f"Endereço: {dados['logradouro']}")
+    print(f"Bairro: {dados['bairro']}")
+    print(f"Cidade: {dados['localidade']}")
+    print(f"Estado: {dados['uf']}")
