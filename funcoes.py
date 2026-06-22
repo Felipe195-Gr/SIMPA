@@ -59,4 +59,13 @@ def consulta():
                     print(f"produto pesquisado: {produto},ID:{codigo}, {nome_produto}, {categoria}, R${preco}, {estoque}, {vendedor}")
         break
     
-    
+
+def relatorio_total_vendido(pedidos):
+    from calculos import calcular_total
+    total_vendido = 0
+
+    for pedido in pedidos:
+        total_vendido += calcular_total(pedido)
+    total = relatorio_total_vendido(pedidos)
+    print(f"Total vendido: R$ {total:.2f}")
+    return total_vendido
