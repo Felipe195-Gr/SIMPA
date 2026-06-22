@@ -65,6 +65,11 @@ def consulta():
 def relatorio_total_vendido(pedidos):
     from calculos import calcular_total
     total_vendido = 0
+    for pedido in pedidos:
+        total_vendido += calcular_total(pedido)
+    total = relatorio_total_vendido(pedidos)
+    print(f"Total vendido: R$ {total:.2f}")
+    return total_vendido
 
 def consultar_Cep():
     with open("clientes.csv", "r", encoding="utf-8") as arquivo:
