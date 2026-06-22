@@ -1,4 +1,5 @@
 import requests
+import csv
 #função que cadastra os produtos
 
 def cadastro_produtos():
@@ -62,6 +63,10 @@ def consulta():
 
 
 def consultar_Cep():
+    with open("clientes.csv", "r", encoding="utf-8") as arquivo:
+        print("Clientes cadastrados:")
+        clientes = {}
+
     cep = input("Digite o CEP:")
     url = f"https://viacep.com.br/ws/{cep}/json/"
 
