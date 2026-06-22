@@ -38,7 +38,7 @@ def cadastro_cliente():
 
 #função que cadastra os vendedores
 def cadastro_vendedores():
-    cpf = input("Digite o CPF do vendedor")
+    cpf = input("Digite o CPF do vendedor: ")
     nome = input("Qual é o nome do vendedor: ")
     telefone = input("Qual é o telefone do vendedor(49)xxxxx-xxxx: ")
     cep = input("Qual é o CEP do vendedor (xxxxx-xxx): ")
