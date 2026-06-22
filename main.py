@@ -7,7 +7,7 @@ while True:
     print("Olá, seja bem-vindo ao SIMPA!")
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
     print(" 1 - Aba de cadastros")
-    print(" 2 - Criar e consultar pedidos")
+    print(" 2 - Criar pedidos ou consultar produtos")
     print(" 3 - Sair")
 
     escolha = input("Digite o número da opção desejada: ")
