@@ -23,7 +23,7 @@ def cadastro_produtos():
 #função que cadastra os clientes
 def cadastro_cliente():
     print("Cadastro de Clientes")
-    cpf = input("Digite o CPF do cliente")
+    cpf = input("Digite o CPF do cliente: ")
     nome = input("Digite o nome do cliente: ")
     email = input("Digite o email do cliente: ")
     cep = input("Digite o endereço do cliente: ")
