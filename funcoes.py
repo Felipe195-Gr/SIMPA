@@ -1,5 +1,6 @@
 import requests
 import csv
+from calculos import calcular_total
 
 #função que cadastra os produtos
 
@@ -63,7 +64,6 @@ def consulta():
         break
     
 def relatorio_total_vendido(pedidos):
-    from calculos import calcular_total
     total_vendido = 0
     for pedido in pedidos:
         total_vendido += calcular_total(pedido)
