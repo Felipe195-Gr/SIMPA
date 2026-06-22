@@ -39,7 +39,7 @@ while True:
     elif escolha == "2":
         
         while True:
-            print(" 1 - Consultar pedidos")
+            print(" 1 - Consultar produtos")
             print(" 2 - Criar pedidos")
 
             escolha_pedidos = input("Digite o número da opção desejada: ")
