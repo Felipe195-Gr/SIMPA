@@ -19,7 +19,7 @@ def cadastro_produtos():
     with open(f'cadastro_produtos.csv', 'a', encoding="utf-8") as arquivo:
         arquivo.write(f"{codigo};{nome};{categoria};{preco};{estoque};{vendedor}\n")    
         print("Produto cadastrado com sucesso!")
-
+    return preco
 #função que cadastra os clientes
 def cadastro_cliente():
     print("Cadastro de Clientes")
@@ -58,4 +58,6 @@ def consulta():
                 if produto == nome_produto:
                     print(f"produto pesquisado: {produto},ID:{codigo}, {nome_produto}, {categoria}, R${preco}, {estoque}, {vendedor}")
         break
-    
+
+
+
