@@ -1,4 +1,7 @@
 import csv
+import os
+from datetime import datetime
+
 def criar_pedido():
     pedido = {}
     with open("clientes.csv", "r", encoding="utf-8") as arquivo:
@@ -47,6 +50,33 @@ def criar_pedido():
                     break
                 else:
                     print("Código de produto não encontrado. Por favor, tente novamente.")
+        # Salvar pedido na pasta Downloads
+    pasta_downloads = os.path.join(os.path.expanduser("~"), "Downloads")
+
+    nome_arquivo = os.path.join(
+        pasta_downloads,
+        f"pedido_{cpfcli}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+    )
+
+    with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
+        arquivo.write("=== PEDIDO SIMPA ===\n\n")
+        arquivo.write(f"ID: {pedido['id']}\n")
+        arquivo.write(f"Cliente: {pedido['cliente']['nome']}\n")
+        arquivo.write(f"Email: {pedido['cliente']['email']}\n")
+        arquivo.write(f"CEP de entrega: {pedido['entrega']}\n")
+        arquivo.write(f"Status: {pedido['status']}\n\n")
+
+        arquivo.write("PRODUTOS:\n")
+
+        for produto in pedido["produtos"]:
+            arquivo.write(
+                f"- {produto['nome']} | "
+                f"Categoria: {produto['categoria']} | "
+                f"Preço: R$ {produto['preco']} | "
+                f"Fornecedor: {produto['fornecedor']}\n"
+            )
+
+    print(f"\nPedido salvo em:\n{nome_arquivo}")
     return pedido
 
 # pedido = criar_pedido()
