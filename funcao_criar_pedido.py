@@ -101,6 +101,10 @@ def criar_pedido():
         arquivo.write(f"Email: {pedido['cliente']['email']}\n")
         arquivo.write(f"CEP de entrega: {pedido['entrega']}\n")
         arquivo.write(f"Status: {pedido['status']}\n\n")
+        arquivo.write("\n")
+        arquivo.write(f"Valor dos produtos: R$ {valor_total:.2f}\n")
+        arquivo.write(f"Frete: R$ {frete:.2f}\n")
+        arquivo.write(f"Total final: R$ {total_final:.2f}\n")
 
         arquivo.write("PRODUTOS:\n")
 
@@ -112,10 +116,7 @@ def criar_pedido():
                 f"Fornecedor: {produto['fornecedor']}\n"
             )
 
-        arquivo.write("\n")
-        arquivo.write(f"Valor dos produtos: R$ {valor_total:.2f}\n")
-        arquivo.write(f"Frete: R$ {frete:.2f}\n")
-        arquivo.write(f"Total final: R$ {total_final:.2f}\n")
+        
 
     print(f"\nPedido salvo em:\n{nome_arquivo}")
 
