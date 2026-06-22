@@ -71,6 +71,12 @@ def relatorio_total_vendido(pedidos):
     print(f"Total vendido: R$ {total:.2f}")
     return total_vendido
 
+def comissao_total_plataforma(pedidos):
+    comissao_total = 0
+    for pedido in pedidos:
+        comissao_total += pedido['comissao']
+    return comissao_total
+
 def consultar_Cep():
     with open("clientes.csv", "r", encoding="utf-8") as arquivo:
         print("Clientes cadastrados:")
