@@ -1,6 +1,6 @@
 import requests
 import csv
-from calculos import *
+from funcao_criar_pedido import *
 
 #função que cadastra os produtos
 
