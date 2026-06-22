@@ -30,6 +30,8 @@ def criar_pedido():
         pedido["produtos"] = []
         print("Produtos disponíveis:")
         produtos = {}
+        valor_total = []
+
         with open("cadastro_produtos.csv", "r", encoding="utf-8") as arquivo:
             for linha in arquivo:
                 cod, nome, categoria, preco, estoque, fornecedor = linha.strip().split(";")
