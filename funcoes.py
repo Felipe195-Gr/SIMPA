@@ -204,7 +204,7 @@ def criar_pedido():
         
 
     print(f"\nPedido salvo em:\n{nome_arquivo}")
-
+    
     return pedido
 
 def relatorio_total_vendido(pedidos):

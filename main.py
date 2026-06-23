@@ -49,7 +49,9 @@ while True:
                 consulta()
 
             elif escolha_pedidos == "2":
-                criar_pedido()
+                pedido = criar_pedido()
+                if pedido:
+                    pedidos.append(pedido)
             
             elif escolha_pedidos == "3":
                 consultar_Cep()
