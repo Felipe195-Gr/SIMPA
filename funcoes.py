@@ -353,3 +353,4 @@ def relatorio_estoque():
 
     for p in produtos:
         print(f"{p['nome']} - estoque: {p['estoque']}")
+
