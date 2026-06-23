@@ -39,6 +39,7 @@ while True:
         while True:
             print(" 1 - Consultar produtos")
             print(" 2 - Criar pedidos")
+            print(" 3 - Atualizar o Estoque")
             print(" 3 - Consultar Cep do cliente")
             print(" 4 - Sair")
 
@@ -51,11 +52,13 @@ while True:
                 pedido = criar_pedido()
                 if pedido:
                     pedidos.append(pedido)
+                
+
             
-            elif escolha_pedidos == "3":
+            elif escolha_pedidos == "4":
                 consultar_Cep()
 
-            elif escolha_pedidos == "4":
+            elif escolha_pedidos == "5":
                 break
     
     elif escolha == "3":

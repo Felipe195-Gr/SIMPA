@@ -191,8 +191,39 @@ def criar_pedido():
         )
 
     print("\nPedido salvo em: pedidos.csv")
-    
+    atualizar_estoque(pedido["produtos"])
     return pedido
+
+def atualizar_estoque(produtos_vendidos):
+    produtos = []
+
+    # ler arquivo atual
+    with open("cadastro_produtos.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            cod, nome, categoria, preco, estoque, fornecedor = linha.strip().split(";")
+
+            produtos.append({
+                "cod": cod,
+                "nome": nome,
+                "categoria": categoria,
+                "preco": preco,
+                "estoque": int(estoque),
+                "fornecedor": fornecedor
+            })
+
+    # reduzir estoque
+    for vendido in produtos_vendidos:
+        for p in produtos:
+            if p["nome"] == vendido["nome"]:
+                if p["estoque"] > 0:
+                    p["estoque"] -= 1
+
+    # reescrever arquivo
+    with open("cadastro_produtos.csv", "w", encoding="utf-8") as arquivo:
+        for p in produtos:
+            arquivo.write(
+                f"{p['cod']};{p['nome']};{p['categoria']};{p['preco']};{p['estoque']};{p['fornecedor']}\n"
+            )
 
 def relatorio_total_vendido():
     total_vendido = 0
