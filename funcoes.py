@@ -210,8 +210,6 @@ def relatorio_total_vendido():
     print(f"Total vendido: R$ {total_vendido:.2f}")
     return total_vendido
 
-from calculos import calcular_comissao
-
 def comissao_total_plataforma():
     total_comissao = 0
 
