@@ -31,7 +31,7 @@ def cadastro_cliente():
     cpf = input("Digite o CPF do cliente: ")
     nome = input("Digite o nome do cliente: ")
     email = input("Digite o email do cliente: ")
-    cep = input("Digite o endereço do cliente: ")
+    cep = input("Digite o CEP do cliente: ")
 
 
     with open ('clientes.csv', 'a', encoding='utf-8') as arquivo:
