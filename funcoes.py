@@ -216,8 +216,35 @@ def relatorio_total_vendido(pedidos):
     print(f"Total vendido: R$ {total_vendido:.2f}")
     return total_vendido
 
-def comissao_total_plataforma(pedidos):
+def comissao_total_plataforma():
     total_comissao = 0
+    with open("pedidos.csv", "r", encoding="utf-8") as arquivo:
+        pedidos = []
+        for linha in arquivo:
+            dados = linha.strip().split(";")
+            pedido = {
+                "id": dados[0],
+                "cliente": {
+                    "nome": dados[1],
+                    "email": dados[2],
+                    "cep": dados[3]
+                },
+                "entrega": dados[4],
+                "status": dados[5],
+                "produtos": []
+            }
+            produtos_str = dados[6].split("|")
+            for produto_str in produtos_str:
+                if produto_str:
+                    nome, categoria, preco, fornecedor = produto_str.split(",")
+                    produto = {
+                        "nome": nome,
+                        "categoria": categoria,
+                        "preco": float(preco),
+                        "fornecedor": fornecedor
+                    }
+                    pedido["produtos"].append(produto)
+            pedidos.append(pedido)
 
     for pedido in pedidos:
         for produto in pedido["produtos"]:
