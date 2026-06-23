@@ -1,6 +1,5 @@
 import requests
 import csv
-from funcao_criar_pedido import *
 import os
 from datetime import datetime
 from calculos import calcular_total, calcular_frete
