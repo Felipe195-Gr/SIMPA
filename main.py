@@ -82,10 +82,10 @@ while True:
             elif escolha_relatorios == "4":
                 produto_mais_vendido()
             
-            elif escolha_pedidos == "5":
+            elif escolha_relatorios == "5":
                 relatorio_estoque()
 
-            elif escolha_pedidos == "6":
+            elif escolha_relatorios == "6":
                 break
 
     elif escolha == "5":
