@@ -87,10 +87,10 @@ while True:
                 relatorio_estoque()
 
             elif escolha_relatorios == "5":
-            relatorio_clientes_bairo()
+                relatorio_clientes_bairo()
 
             elif escolha_relatorios == "7":
-            break
+                break
 
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
