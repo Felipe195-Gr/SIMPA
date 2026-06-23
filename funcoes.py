@@ -171,39 +171,26 @@ def criar_pedido():
     frete = calcular_frete(valor_total)
     total_final = valor_total + frete
 
-    # ===================== ARQUIVO =====================
-    pasta_downloads = os.path.join(os.path.expanduser("~"), "Downloads")
+# ===================== CSV DE PEDIDOS =====================
 
-    nome_arquivo = os.path.join(
-        pasta_downloads,
-        f"pedido_{cpfcli}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+    produtos_texto = "|".join(
+        [f"{p['nome']}({p['preco']})" for p in pedido["produtos"]]
     )
 
-    with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
-        arquivo.write("=== PEDIDO SIMPA ===\n\n")
-        arquivo.write(f"ID: {pedido['id']}\n")
-        arquivo.write(f"Cliente: {pedido['cliente']['nome']}\n")
-        arquivo.write(f"Email: {pedido['cliente']['email']}\n")
-        arquivo.write(f"CEP de entrega: {pedido['entrega']}\n")
-        arquivo.write(f"Status: {pedido['status']}\n\n")
-        arquivo.write("\n")
-        arquivo.write(f"Valor dos produtos: R$ {valor_total:.2f}\n")
-        arquivo.write(f"Frete: R$ {frete:.2f}\n")
-        arquivo.write(f"Total final: R$ {total_final:.2f}\n")
+    with open("pedidos.csv", "a", encoding="utf-8") as arquivo:
+        arquivo.write(
+            f"{pedido['id']};"
+            f"{pedido['cliente']['nome']};"
+            f"{pedido['cliente']['email']};"
+            f"{pedido['entrega']};"
+            f"{pedido['status']};"
+            f"{valor_total:.2f};"
+            f"{frete:.2f};"
+            f"{total_final:.2f};"
+            f"{produtos_texto}\n"
+        )
 
-        arquivo.write("PRODUTOS:\n")
-
-        for produto in pedido["produtos"]:
-            arquivo.write(
-                f"- {produto['nome']} | "
-                f"Categoria: {produto['categoria']} | "
-                f"Preço: R$ {produto['preco']:.2f} | "
-                f"Fornecedor: {produto['fornecedor']}\n"
-            )
-
-        
-
-    print(f"\nPedido salvo em:\n{nome_arquivo}")
+    print("\nPedido salvo em: pedidos.csv")
     
     return pedido
 
