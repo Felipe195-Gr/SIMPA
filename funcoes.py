@@ -1,6 +1,9 @@
 import requests
 import csv
 from funcao_criar_pedido import *
+import os
+from datetime import datetime
+from calculos import calcular_total, calcular_frete
 
 #função que cadastra os produtos
 
@@ -102,13 +105,6 @@ def consultar_Cep():
     print(f"Bairro: {dados['bairro']}")
     print(f"Cidade: {dados['localidade']}")
     print(f"Estado: {dados['uf']}")
-
-import csv
-import os
-from datetime import datetime
-from calculos import calcular_total, calcular_frete
-
-
 def criar_pedido():
     pedido = {}
 
