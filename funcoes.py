@@ -335,7 +335,21 @@ def produto_mais_vendido():
 
 
 def relatorio_estoque():
+    produtos = []
+
     with open("cadastro_produtos.csv", "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
             cod, nome, cat, preco, estoque, forn = linha.strip().split(";")
-            print(f"{nome} - estoque: {estoque}")
+
+            produtos.append({
+                "cod": cod,
+                "nome": nome,
+                "estoque": int(estoque)
+            })
+
+    produtos.sort(key=lambda x: x["estoque"])
+
+    print("\n=== ESTOQUE (MENOR PARA MAIOR) ===\n")
+
+    for p in produtos:
+        print(f"{p['nome']} - estoque: {p['estoque']}")
