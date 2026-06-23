@@ -194,21 +194,48 @@ def criar_pedido():
     
     return pedido
 
-def relatorio_total_vendido(pedidos):
+def relatorio_total_vendido():
     total_vendido = 0
 
-    for pedido in pedidos:
-        total_vendido += calcular_total(pedido["produtos"])
+    with open("pedidos.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            dados = linha.strip().split(";")
+
+            if len(dados) < 8:
+                continue  # ignora linha inválida
+
+            total = float(dados[7])  # coluna "total_final"
+            total_vendido += total
 
     print(f"Total vendido: R$ {total_vendido:.2f}")
     return total_vendido
 
-def comissao_total_plataforma(pedidos):
+from calculos import calcular_comissao
+
+def comissao_total_plataforma():
     total_comissao = 0
 
-    for pedido in pedidos:
-        for produto in pedido["produtos"]:
-            total_comissao += calcular_comissao(produto["preco"])
+    with open("pedidos.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            dados = linha.strip().split(";")
+
+            if len(dados) < 9:
+                continue
+
+            produtos_texto = dados[8]  # coluna produtos
+
+            if produtos_texto.strip() == "":
+                continue
+
+            produtos = produtos_texto.split("|")
+
+            for p in produtos:
+                try:
+                    # formato: Nome(preco)
+                    preco = float(p.split("(")[1].replace(")", ""))
+                    total_comissao += calcular_comissao(preco)
+                except:
+                    continue
 
     print(f"Comissão total: R$ {total_comissao:.2f}")
     return total_comissao
