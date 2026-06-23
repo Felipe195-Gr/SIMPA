@@ -58,6 +58,7 @@ while True:
 
             elif escolha_pedidos == "4":
                 break
+            
     elif escolha == "3":
         relatorio_total_vendido(pedidos)
 
