@@ -65,21 +65,29 @@ while True:
             print(" 2 - Comissão total")
             print(" 3 - Vendas por vendedor")
             print(" 4 - Produto mais vendido")
+            print(" 5 - Estoque")
+            print(" 6 - Sair")
 
             escolha_relatorios = input("Digite o número da opção desejada: ")
 
-            if escolha_relatorios == "3":
+            if escolha_relatorios == "1":
                 relatorio_total_vendido()
 
-            elif escolha_relatorios == "4":
+            elif escolha_relatorios == "2":
                 comissao_total_plataforma()
             
-            elif escolha_relatorios == "5":
+            elif escolha_relatorios == "3":
                 relatorio_vendas_por_vendedor()
 
-            elif escolha_relatorios == "6":
+            elif escolha_relatorios == "4":
                 produto_mais_vendido()
-        
-    # elif escolha == "5":
-    #     print("Obrigado por usar o SIMPA! Até a próxima!")
-    #     break
+            
+            elif escolha_pedidos == "5":
+                relatorio_estoque()
+
+            elif escolha_pedidos == "6":
+                break
+
+    elif escolha == "5":
+        print("Obrigado por usar o SIMPA! Até a próxima!")
+        break

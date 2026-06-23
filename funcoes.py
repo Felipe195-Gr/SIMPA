@@ -333,3 +333,9 @@ def produto_mais_vendido():
     print(f"Produto mais vendido: {mais_vendido} ({vendas[mais_vendido]} vendas)")
     return mais_vendido
 
+
+def relatorio_estoque():
+    with open("cadastro_produtos.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            cod, nome, cat, preco, estoque, forn = linha.strip().split(";")
+            print(f"{nome} - estoque: {estoque}")
