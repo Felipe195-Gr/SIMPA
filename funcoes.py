@@ -354,3 +354,22 @@ def relatorio_estoque():
     for p in produtos:
         print(f"{p['nome']} - estoque: {p['estoque']}")
 
+def relatorio_clientes_bairo(cep):
+        bairros = {}
+        with open("clientes.csv", "r", encoding="utf-8") as arquivo:
+            for linha in arquivo:
+                cep = linha.strip().split(";")[-1]
+
+            url = f"https://viacep.com.br/ws/{cep}/json/"
+            resposta = requests.get(url)
+            dados = resposta.json()
+
+            bairro = dados["bairro"]
+
+            if bairro in bairros:
+                bairros[bairro] += 1
+            else:
+                bairros[bairro] = 1
+
+        for bairro in bairros:
+            print(bairro, ":", bairros[bairro])
