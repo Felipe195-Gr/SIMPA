@@ -86,7 +86,7 @@ while True:
             elif escolha_relatorios == "5":
                 relatorio_estoque()
 
-            elif escolha_relatorios == "5":
+            elif escolha_relatorios == "6":
                 relatorio_clientes_bairo()
 
             elif escolha_relatorios == "7":
