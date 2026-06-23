@@ -1,4 +1,5 @@
 from  funcoes import *
+pedidos = []
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
@@ -56,10 +57,10 @@ while True:
             elif escolha_pedidos == "4":
                 break
     elif escolha == "3":
-        relatorio_total_vendido()
+        relatorio_total_vendido(pedidos)
 
     elif escolha == "4":
-        comissao_total_plataforma()
+        comissao_total_plataforma(pedidos)
         
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
