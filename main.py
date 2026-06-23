@@ -1,5 +1,4 @@
-from funcoes import *
-from funcao_criar_pedido import criar_pedido
+from  funcoes import *
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
@@ -65,4 +64,3 @@ while True:
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
         break
-
