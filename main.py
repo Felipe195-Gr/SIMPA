@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 from  funcoes import *
+=======
+from funcoes import *
+
+>>>>>>> 2137f853c217d69a5dcd6ebe1ca7215e94226a39
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
@@ -55,11 +60,11 @@ while True:
 
             elif escolha_pedidos == "4":
                 break
-    elif escolha == "3":
-        relatorio_total_vendido()
+    # elif escolha == "3":
+    #     relatorio_total_vendido()
 
-    elif escolha == "4":
-        comissao_total_plataforma()
+    # elif escolha == "4":
+    #     comissao_total_plataforma()
         
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
