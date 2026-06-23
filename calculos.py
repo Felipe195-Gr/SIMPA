@@ -15,9 +15,4 @@ def calcular_frete(valor_total):
 
 
 def calcular_total(produtos):
-    total = 0
-
-    for produto in produtos:
-        total += float(produto["preco"])
-
-    return total
+    return sum(float(produto["preco"]) for produto in produtos)

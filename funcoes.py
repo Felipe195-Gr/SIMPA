@@ -2,8 +2,7 @@ import requests
 import csv
 import os
 from datetime import datetime
-from calculos import calcular_total, calcular_frete
-
+from calculos import *
 #função que cadastra os produtos
 
 def cadastro_produtos():
@@ -210,15 +209,20 @@ def criar_pedido():
 
 def relatorio_total_vendido(pedidos):
     total_vendido = 0
+
     for pedido in pedidos:
-        total_vendido += calcular_total(pedido)
-    total = relatorio_total_vendido(pedidos)
-    print(f"Total vendido: R$ {total:.2f}")
+        total_vendido += calcular_total(pedido["produtos"])
+
+    print(f"Total vendido: R$ {total_vendido:.2f}")
     return total_vendido
 
 def comissao_total_plataforma(pedidos):
-    comissao_total = 0
+    total_comissao = 0
+
     for pedido in pedidos:
-        comissao_total += pedido['comissao']
-    return comissao_total
+        for produto in pedido["produtos"]:
+            total_comissao += calcular_comissao(produto["preco"])
+
+    print(f"Comissão total: R$ {total_comissao:.2f}")
+    return total_comissao
 
