@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 from  funcoes import *
-=======
-from funcoes import *
-
->>>>>>> 2137f853c217d69a5dcd6ebe1ca7215e94226a39
 while True:
     print("Olá, seja bem-vindo ao SIMPA!")
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
