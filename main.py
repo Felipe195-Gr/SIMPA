@@ -60,10 +60,10 @@ while True:
                 break
             
     elif escolha == "3":
-        relatorio_total_vendido(pedidos)
+        relatorio_total_vendido()
 
     elif escolha == "4":
-        comissao_total_plataforma(pedidos)
+        comissao_total_plataforma()
         
     elif escolha == "5":
         print("Obrigado por usar o SIMPA! Até a próxima!")
