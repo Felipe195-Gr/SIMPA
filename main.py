@@ -5,8 +5,7 @@ while True:
     print("Esse é um sistema de MARKETPLACE de produtos artesanais")
     print(" 1 - Aba de cadastros")
     print(" 2 - Criar pedidos ou consultar produtos e CEP")
-    print(" 3 - Gerar relatório")
-    print(" 4 - Comissão total")
+    print(" 3 - Relatórios")    
     print(" 5 - Sair")
 
     escolha = input("Digite o número da opção desejada: ")
@@ -58,13 +57,29 @@ while True:
 
             elif escolha_pedidos == "4":
                 break
-            
+    
     elif escolha == "3":
-        relatorio_total_vendido()
+        while True:
+            print("Aba de Relatórios")
+            print(" 1 - Total vendido")
+            print(" 2 - Comissão total")
+            print(" 3 - Vendas por vendedor")
+            print(" 4 - Produto mais vendido")
 
-    elif escolha == "4":
-        comissao_total_plataforma()
+            escolha_relatorios = input("Digite o número da opção desejada: ")
+
+            if escolha_relatorios == "3":
+                relatorio_total_vendido()
+
+            elif escolha_relatorios == "4":
+                comissao_total_plataforma()
+            
+            elif escolha_relatorios == "5":
+                relatorio_vendas_por_vendedor()
+
+            elif escolha_relatorios == "6":
+                produto_mais_vendido()
         
-    elif escolha == "5":
-        print("Obrigado por usar o SIMPA! Até a próxima!")
-        break
+    # elif escolha == "5":
+    #     print("Obrigado por usar o SIMPA! Até a próxima!")
+    #     break

@@ -174,7 +174,7 @@ def criar_pedido():
 # ===================== CSV DE PEDIDOS =====================
 
     produtos_texto = "|".join(
-        [f"{p['nome']}({p['preco']})" for p in pedido["produtos"]]
+    [f"{p['nome']}({p['preco']}:{p['fornecedor']})" for p in pedido["produtos"]]   
     )
 
     with open("pedidos.csv", "a", encoding="utf-8") as arquivo:
@@ -237,4 +237,68 @@ def comissao_total_plataforma():
 
     print(f"Comissão total: R$ {total_comissao:.2f}")
     return total_comissao
+
+def relatorio_vendas_por_vendedor():
+    vendas = {}
+
+    with open("pedidos.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            dados = linha.strip().split(";")
+
+            if len(dados) < 9:
+                continue
+
+            produtos = dados[8].split("|")
+
+            for p in produtos:
+                try:
+                    nome = p.split("(")[0]
+                    preco_vendedor = p.split("(")[1].replace(")", "")
+                    preco, vendedor = preco_vendedor.split(":")
+
+                    preco = float(preco)
+
+                    if vendedor not in vendas:
+                        vendas[vendedor] = 0
+
+                    vendas[vendedor] += preco
+
+                except:
+                    continue
+
+    for vendedor, total in vendas.items():
+        print(f"{vendedor}: R$ {total:.2f}")
+
+def produto_mais_vendido():
+    vendas = {}
+
+    with open("pedidos.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            dados = linha.strip().split(";")
+
+            if len(dados) < 9:
+                continue
+
+            produtos = dados[8].split("|")
+
+            for p in produtos:
+                try:
+                    nome = p.split("(")[0].strip()
+
+                    if nome not in vendas:
+                        vendas[nome] = 0
+
+                    vendas[nome] += 1
+
+                except:
+                    continue
+
+    if not vendas:
+        print("Nenhuma venda registrada.")
+        return
+
+    mais_vendido = max(vendas, key=vendas.get)
+
+    print(f"Produto mais vendido: {mais_vendido} ({vendas[mais_vendido]} vendas)")
+    return mais_vendido
 
