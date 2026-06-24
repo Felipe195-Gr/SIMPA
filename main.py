@@ -67,7 +67,8 @@ while True:
             print(" 4 - Produto mais vendido")
             print(" 5 - Estoque")
             print(" 6 - Clientes por bairro")
-            print(" 7 - Sair")
+            print(" 7 - Verificador de CEP")
+            print(" 8 - Sair")
 
             escolha_relatorios = input("Digite o número da opção desejada: ")
 
@@ -87,9 +88,12 @@ while True:
                 relatorio_estoque()
 
             elif escolha_relatorios == "6":
-                relatorio_clientes_bairo()
+                relatorio_clientes_bairro()
 
             elif escolha_relatorios == "7":
+                verificar_ceps()
+
+            elif escolha_relatorios == "8":
                 break
 
     elif escolha == "5":

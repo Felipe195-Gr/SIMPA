@@ -354,7 +354,7 @@ def relatorio_estoque():
     for p in produtos:
         print(f"{p['nome']} - estoque: {p['estoque']}")
 
-def relatorio_clientes_bairo():
+def relatorio_clientes_bairro():
         bairros = {}
         with open("clientes.csv", "r", encoding="utf-8") as arquivo:
             for linha in arquivo:
@@ -373,3 +373,19 @@ def relatorio_clientes_bairo():
 
         for bairro in bairros:
             print(bairro, ":", bairros[bairro])
+
+def verificar_ceps():
+    with open("clientes.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            cpf, nome, email, cep = linha.strip().split(";")
+
+            url = f"https://viacep.com.br/ws/{cep}/json/"
+            resposta = requests.get(url)
+            dados = resposta.json()
+
+            if "erro" in dados:
+                print(f"❌ {nome}: CEP inválido ({cep})")
+            else:
+                print(f"✅ {nome}: CEP válido ({cep})")
+                print(f"   Bairro: {dados['bairro']}")
+                print(f"   Cidade: {dados['localidade']}")
