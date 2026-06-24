@@ -360,16 +360,16 @@ def relatorio_clientes_bairo():
             for linha in arquivo:
                 cep = linha.strip().split(";")[-1]
 
-            url = f"https://viacep.com.br/ws/{cep}/json/"
-            resposta = requests.get(url)
-            dados = resposta.json()
+                url = f"https://viacep.com.br/ws/{cep}/json/"
+                resposta = requests.get(url)
+                dados = resposta.json()
 
-            bairro = dados["bairro"]
+                bairro = dados["bairro"]
 
-            if bairro in bairros:
-                bairros[bairro] += 1
-            else:
-                bairros[bairro] = 1
+                if bairro in bairros:
+                    bairros[bairro] += 1
+                else:
+                    bairros[bairro] = 1
 
         for bairro in bairros:
             print(bairro, ":", bairros[bairro])
