@@ -333,7 +333,6 @@ def produto_mais_vendido():
     print(f"Produto mais vendido: {mais_vendido} ({vendas[mais_vendido]} vendas)")
     return mais_vendido
 
-
 def relatorio_estoque():
     produtos = []
 
@@ -355,25 +354,31 @@ def relatorio_estoque():
         print(f"{p['nome']} - estoque: {p['estoque']}")
 
 def relatorio_clientes_bairro():
-        bairros = {}
-        with open("clientes.csv", "r", encoding="utf-8") as arquivo:
-            for linha in arquivo:
-                cep = linha.strip().split(";")[-1]
 
-                url = f"https://viacep.com.br/ws/{cep}/json/"
-                resposta = requests.get(url)
-                dados = resposta.json()
 
-                bairro = dados["bairro"]
+    bairros = {}
 
-                if bairro in bairros:
-                    bairros[bairro] += 1
-                else:
-                    bairros[bairro] = 1
+    with open("clientes.csv", "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            cpf, nome, email, cep = linha.strip().split(";")
 
-        for bairro in bairros:
-            print(bairro, ":", bairros[bairro])
+            url = f"https://viacep.com.br/ws/{cep}/json/"
+            resposta = requests.get(url)
+            dados = resposta.json()
 
+            # 🔴 validação do CEP
+            if "erro" in dados:
+                continue  # ignora CEP inválido
+
+            bairro = dados.get("bairro", "DESCONHECIDO")
+
+            if bairro == "":
+                bairro = "DESCONHECIDO"
+
+            bairros[bairro] = bairros.get(bairro, 0) + 1
+
+    for bairro, qtd in bairros.items():
+        print(f"{bairro} : {qtd}")
 def verificar_ceps():
     with open("clientes.csv", "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
