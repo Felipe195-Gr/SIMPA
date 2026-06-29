@@ -89,6 +89,7 @@ def consultar_Cep():
     print(f"Bairro: {dados['bairro']}")
     print(f"Cidade: {dados['localidade']}")
     print(f"Estado: {dados['uf']}")
+    
 def criar_pedido():
     pedido = {}
 
