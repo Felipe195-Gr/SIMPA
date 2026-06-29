@@ -55,7 +55,7 @@ while True:
             
             elif escolha_pedidos == "3":
                 consultar_Cep()
-
+                
             elif escolha_pedidos == "4":
                 break
     
