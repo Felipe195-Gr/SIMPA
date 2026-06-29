@@ -122,7 +122,7 @@ def criar_pedido():
             print("CPF não encontrado. Tente novamente.")
 
     # PEDIDO 
-    pedido["id"] = 2
+    pedido["id"] += 1
     pedido["cliente"] = cliente
     pedido["entrega"] = cliente["cep"]
     pedido["status"] = "Em andamento"
