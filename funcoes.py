@@ -3,7 +3,7 @@ import csv
 import os
 from datetime import datetime
 from calculos import *
-#função que cadastra os produtos
+
 
 def cadastro_produtos():
     print("Cadastro de Produtos")
@@ -25,7 +25,7 @@ def cadastro_produtos():
         arquivo.write(f"{codigo};{nome};{categoria};{preco};{estoque};{vendedor}\n")    
         print("Produto cadastrado com sucesso!")
     return preco
-#função que cadastra os clientes
+
 def cadastro_cliente():
     print("Cadastro de Clientes")
     cpf = input("Digite o CPF do cliente: ")
@@ -37,7 +37,6 @@ def cadastro_cliente():
     with open ('clientes.csv', 'a', encoding='utf-8') as arquivo:
         arquivo.write(f"{cpf};{nome};{email};{cep}\n")
 
-#função que cadastra os vendedores
 def cadastro_vendedores():
     cpf = input("Digite o CPF do vendedor: ")
     nome = input("Qual é o nome do vendedor: ")
@@ -380,6 +379,7 @@ def relatorio_clientes_bairro():
 
     for bairro, qtd in bairros.items():
         print(f"{bairro} : {qtd}")
+
 def verificar_ceps():
     with open("clientes.csv", "r", encoding="utf-8") as arquivo:
         for linha in arquivo:
