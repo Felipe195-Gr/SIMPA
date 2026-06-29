@@ -89,7 +89,7 @@ def consultar_Cep():
     print(f"Bairro: {dados['bairro']}")
     print(f"Cidade: {dados['localidade']}")
     print(f"Estado: {dados['uf']}")
-    
+
 def criar_pedido():
     pedido = {}
 
@@ -122,14 +122,14 @@ def criar_pedido():
         else:
             print("CPF não encontrado. Tente novamente.")
 
-    # ===================== PEDIDO =====================
+    # PEDIDO 
     pedido["id"] = 2
     pedido["cliente"] = cliente
     pedido["entrega"] = cliente["cep"]
     pedido["status"] = "Em andamento"
     pedido["produtos"] = []
 
-    # ===================== PRODUTOS =====================
+    # PRODUTOS 
     print("\nProdutos disponíveis:")
     produtos = {}
 
@@ -167,12 +167,12 @@ def criar_pedido():
         else:
             print("Código de produto não encontrado.")
 
-    # ===================== CÁLCULOS =====================
+    #  CÁLCULOS 
     valor_total = calcular_total(pedido["produtos"])
     frete = calcular_frete(valor_total)
     total_final = valor_total + frete
 
-# ===================== CSV DE PEDIDOS =====================
+#  CSV DE PEDIDOS 
 
     produtos_texto = "|".join(
     [f"{p['nome']}({p['preco']}:{p['fornecedor']})" for p in pedido["produtos"]]   
